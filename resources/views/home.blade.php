@@ -214,9 +214,7 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-ds
 @include('footer')
-
 </body>
 </html>
 
