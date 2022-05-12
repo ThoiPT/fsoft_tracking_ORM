@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SkillController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,12 @@ Route::get('/', function () {
 });
 Route::get('/home',[\App\Http\Controllers\HomeController::class,'index'])->middleware(['auth'])->name('home');
 Route::get('/logout',[\App\Http\Controllers\HomeController::class,'logout']);
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/skill/create',[SkillController::class,'index']);
+Route::post('skill/create',[SkillController::class,'store']);
+
+Route::get("/skill/update/{id}",[SkillController::class,'editForm']);
+Route::post("/skill/update/{id}",[SkillController::class,'update']);
+Route::get('/skill/list',[SkillController::class,'list']);
+Auth::routes();
