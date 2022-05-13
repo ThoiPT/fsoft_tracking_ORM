@@ -29,6 +29,7 @@ class SkillController extends Controller
         $skill = Skill::find($id);
         return view("Skill/update")->with('skills',$skill);
     }
+
     public function update(Request $request, Skill $id)
     {
         $id->update($request->all());

@@ -28,6 +28,6 @@ class Request extends Model
 
     public function skills()
     {
-        return $this ->belongsTo(Skill::class);
+        return $this ->belongsTo(Skill::class, 'skill_id');
     }
 }

@@ -10,34 +10,48 @@ class RequestController extends Controller
 {
     public function index()
     {
-
         $data = Skill::all();
         return view("Request/create",compact('data'));
     }
 
+    // create
     public function store(Request $request)
     {
 
         ReaquestModel::create($request->all());
-        return \redirect("home");
+        return \redirect('request/list');
     }
 
-    public function editForm(ReaquestModel $id)
+    // update
+    public function editForm($id)
     {
-        return view("Request/update");
+        $request= ReaquestModel::find($id);
+        $skillName = Skill::all();
+        return view("Request/update",compact('skillName'))->with('requests',$request);
     }
-
-    public function update()
+    public function update(Request $request, ReaquestModel $id)
     {
-
+        $id->update($request->all());
+        return \redirect('request/list');
     }
 
+    // delete
+    public function delete($id)
+    {
+        ReaquestModel::destroy($id);
+        return \redirect('request/list');
+    }
+
+    // show
     public function list()
     {
-
+        // Lấy toàn bộ dữ liệu trong bảng Request
         $data = ReaquestModel::all();
-        $data2 = ReaquestModel::with('skills')->find(1)->skills();
-        //dd($data2);
-        return view("Request/list",compact('data','data2'));
+        foreach ($data as $v)
+        {
+            // Tim đến từng id và select đến cột name, sau đó gán vào biến nameSkill
+            $v->nameSkill = ReaquestModel::find($v->id)->skills->name;
+        }
+        return view("Request/list",compact('data'));
     }
 }
