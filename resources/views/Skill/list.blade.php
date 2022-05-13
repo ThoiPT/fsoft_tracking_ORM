@@ -9,7 +9,6 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
                             <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-default">
                                     <i class="fas fa-search"></i>
@@ -48,12 +47,11 @@
                                 </td>
                             @endif
                             <td>
-                                <a href="/skill/update/{{$item->id}}" class="btn btn-success">Update</a>
-                                <a href="/skill/delete/" class="btn btn-danger">Delete</a>
+                                <a href="/skill/update/{{$item->id}}"  class="btn btn-success">Update</a>
+                                <a href="/skill/delete/{{$item->id}}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         @endforeach
-
                         </tbody>
                     </table>
                 </div>

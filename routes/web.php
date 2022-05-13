@@ -26,5 +26,7 @@ Route::post('skill/create',[SkillController::class,'store']);
 
 Route::get("/skill/update/{id}",[SkillController::class,'editForm']);
 Route::post("/skill/update/{id}",[SkillController::class,'update']);
+
+Route::get('/skill/delete/{id}',[SkillController::class,'delete']);
 Route::get('/skill/list',[SkillController::class,'list']);
 Auth::routes();
