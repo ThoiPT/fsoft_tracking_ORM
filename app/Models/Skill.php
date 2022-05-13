@@ -16,12 +16,13 @@ class Skill extends Model
     protected $table = "Skills";
 
     /* 1 Skill - Job nằm trong nhiểu bảng tin - 1 bảng tin chỉ chứa 1 skill - job */
-
-//    public function requests(): \Illuminate\Database\Eloquent\Relations\HasMany
-//    {
-//        return $this->hasMany(Request::class);
-//    }
     public function request(){
         return $this->hasMany(Request::class, 'skill_id', 'id');
+    }
+
+    /* 1 Skill có nhiều Other Skill */
+    public function request_skill()
+    {
+        return $this->hasMany(Request_Skill::class,'skill_id','id');
     }
 }

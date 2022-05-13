@@ -30,4 +30,10 @@ class Request extends Model
     {
         return $this ->belongsTo(Skill::class, 'skill_id');
     }
+
+
+    public function request_skills()
+    {
+        return $this -> hasMany(Request_Skill::class,'request_id','id');
+    }
 }
