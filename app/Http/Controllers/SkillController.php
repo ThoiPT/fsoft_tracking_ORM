@@ -18,10 +18,7 @@ class SkillController extends Controller
     // create
     public function store(Request $request)
     {
-        $request -> validate([
-            'name' => 'required',
-            'status' => 'required'
-        ]);
+//        return $request->all();
         Skill::create($request->all());
         return \redirect('skill/list');
     }
