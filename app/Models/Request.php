@@ -24,7 +24,7 @@ class Request extends Model
         'skill_id',
         'group_id'
     ];
-    protected $table = "Requests";
+    protected $table = "requests";
 
     public function skill()
     {
@@ -35,5 +35,10 @@ class Request extends Model
     public function requestSkills()
     {
         return $this -> hasMany(RequestSkill::class,'request_id','id');
+    }
+
+    public function user()
+    {
+        return $this -> belongsTo(User::class,'user_id');
     }
 }

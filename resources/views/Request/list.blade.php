@@ -16,6 +16,7 @@
                             <th>Title</th>
                             <th>Skill - Job</th>
                             <th>Description</th>
+                            <th>Email</th>
 {{--                            <th>Other</th>--}}
 {{--                            <th>Account</th>--}}
                             <th style="width: 186px">Action</th>
@@ -45,6 +46,7 @@
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->skill->name }}</td>
                             <td>{!!$item->description !!}</td>
+                            <td>{{ $item -> user->email ?? 'None' }}</td>
 {{--                            <td></td>--}}
 {{--                            <td></td>--}}
                             <td>

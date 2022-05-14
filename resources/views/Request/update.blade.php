@@ -35,8 +35,8 @@
                         <label>Other Skill</label>
                         <div class="select2-purple" data-select2-id="119">
                             <select name="other_id[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select other skill" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">
-                                @foreach($data as $item)
-                                    <option @if($requestSkills->skill_id->id == $item->id) selected="selected" @endif value="{{$item -> id}}">{{$item->name}}</option>
+                                @foreach($requestSkill as $item)
+                                    <option @if($item->request_id == $item->request->id) selected="selected" @endif value="{{$item -> request_id}}">{{$item->skill->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -92,7 +92,6 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-success"style="color: white">UPDATE</button>
                     </div>
-
                 </form>
             </div>
             <!-- /.card-body -->

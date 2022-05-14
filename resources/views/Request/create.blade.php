@@ -10,6 +10,7 @@
             <div class="card-body">
                 <form action="/request/create" method="POST" id="frmAddRequest">
                     @csrf
+                    <input name="user_id" hidden value="{{ auth()->user()->id }}">
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i>
                             Request Title

@@ -23,6 +23,8 @@ class User extends Authenticatable
         'password',
     ];
 
+    protected $table = "users";
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /* 1 User đănng nhiều bản tin - Mỗi bản tin dành cho 1 User */
+    public function requests()
+    {
+        return $this->hasMany(Request::class,'user_id','id');
+    }
 }

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Request as RequestModel;
 use App\Models\RequestSkill;
 use App\Models\Skill;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class RequestController extends Controller
@@ -19,8 +21,6 @@ class RequestController extends Controller
     // create
     public function store(Request $request)
     {
-//        dd($request->all());
-//
         $data = RequestModel::create($request->all());
         foreach ($request->other_id as $item)
         {
@@ -37,8 +37,11 @@ class RequestController extends Controller
     {
         $request= RequestModel::find($id);
         $skillName = Skill::all();
+        $requestSkill = RequestSkill::all();
         $data = RequestModel::all();
-        return view("Request/update",compact('skillName','data'))->with('requests',$request);
+        return view("Request/update",compact('skillName','data','requestSkill'))
+            ->with('requests',$request)
+            ->with('requestSkill',$requestSkill);
     }
     public function update(Request $request, RequestModel $id)
     {

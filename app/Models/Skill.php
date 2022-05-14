@@ -13,7 +13,7 @@ class Skill extends Model
         'name','status'
     ];
 
-    protected $table = "Skills";
+    protected $table = "skills";
 
     /* 1 Skill - Job nằm trong nhiểu bảng tin - 1 bảng tin chỉ chứa 1 skill - job */
     public function requests(){
