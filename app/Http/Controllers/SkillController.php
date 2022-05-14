@@ -20,7 +20,8 @@ class SkillController extends Controller
     {
 //        return $request->all();
         Skill::create($request->all());
-        return \redirect('skill/list');
+//        return \redirect('skill/list');
+        return redirect()->route('get.skill.list');
     }
 
     // update

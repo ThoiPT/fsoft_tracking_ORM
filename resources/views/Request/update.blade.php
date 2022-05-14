@@ -26,18 +26,21 @@
                         <label>Select Skill</label>
                         <select name="skill_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%">
                             @foreach($skillName as $item)
-                                <option selected="selected" value="{{ $item -> id }}">{{ $item -> name }}</option>
+                                <option @if($requests->skill->id == $item->id) selected="selected" @endif value="{{ $item -> id }}">{{ $item -> name }}</option>
                             @endforeach
                         </select>
                     </div>
-{{--                        <div class="form-group" data-select2-id="120">--}}
-{{--                            <label>Other Skill</label>--}}
-{{--                            <div class="select2-purple" data-select2-id="119">--}}
-{{--                                <select name="other[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">--}}
-{{--                                    <option value=""></option>--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+
+                    <div class="form-group" data-select2-id="120">
+                        <label>Other Skill</label>
+                        <div class="select2-purple" data-select2-id="119">
+                            <select name="other_id[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select other skill" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">
+                                @foreach($data as $item)
+                                    <option @if($requestSkills->skill_id->id == $item->id) selected="selected" @endif value="{{$item -> id}}">{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess">

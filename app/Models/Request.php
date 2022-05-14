@@ -26,14 +26,14 @@ class Request extends Model
     ];
     protected $table = "Requests";
 
-    public function skills()
+    public function skill()
     {
         return $this ->belongsTo(Skill::class, 'skill_id');
     }
 
 
-    public function request_skills()
+    public function requestSkills()
     {
-        return $this -> hasMany(Request_Skill::class,'request_id','id');
+        return $this -> hasMany(RequestSkill::class,'request_id','id');
     }
 }

@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Request_Skill extends Model
+class RequestSkill extends Model
 {
     protected $fillable = ['request_id','skill_id'];
-    protected $table = "Request__Skills";
+    protected $table = "request_skill";
     use HasFactory;
 
-    public function skills()
+    public function skill()
     {
         return $this -> belongsTo(Skill::class,'skill_id');
     }

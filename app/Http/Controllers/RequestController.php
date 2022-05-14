@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Request as RequestModel;
-use App\Models\Request_Skill;
+use App\Models\RequestSkill;
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RequestController extends Controller
 {
@@ -18,14 +19,16 @@ class RequestController extends Controller
     // create
     public function store(Request $request)
     {
-        RequestModel::create($request->all());
-        // Lấy id của request
-        $data = RequestModel::all();
-        foreach ($data as $re)
+//        dd($request->all());
+//
+        $data = RequestModel::create($request->all());
+        foreach ($request->other_id as $item)
         {
-            $re->idReq = RequestModel::find($re->id);
+            RequestSkill::create([
+                'request_id'=>$data->id,
+                'skill_id'=>$item
+            ]);
         }
-        return $re;
         return \redirect('request/list');
     }
 
@@ -34,10 +37,12 @@ class RequestController extends Controller
     {
         $request= RequestModel::find($id);
         $skillName = Skill::all();
-        return view("Request/update",compact('skillName'))->with('requests',$request);
+        $data = RequestModel::all();
+        return view("Request/update",compact('skillName','data'))->with('requests',$request);
     }
     public function update(Request $request, RequestModel $id)
     {
+
         $id->update($request->all());
         return \redirect('request/list');
     }
@@ -52,13 +57,7 @@ class RequestController extends Controller
     // show
     public function list()
     {
-        // Lấy toàn bộ dữ liệu trong bảng Request
         $data = RequestModel::all();
-        foreach ($data as $v)
-        {
-            // Tim đến từng id và select đến cột name, sau đó gán vào biến nameSkill
-            $v->nameSkill = RequestModel::find($v->id)->skills->name;
-        }
         return view("Request/list",compact('data'));
     }
 }

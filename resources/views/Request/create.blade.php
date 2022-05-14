@@ -30,7 +30,7 @@
                     <div class="form-group" data-select2-id="120">
                         <label>Other Skill</label>
                         <div class="select2-purple" data-select2-id="119">
-                            <select name="skill_id[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select other skill" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">
+                            <select name="other_id[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select other skill" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">
                                 @foreach($data as $item)
                                     <option value="{{$item -> id}}">{{$item->name}}</option>
                                 @endforeach

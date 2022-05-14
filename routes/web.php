@@ -23,14 +23,14 @@ Route::get('/logout',[\App\Http\Controllers\HomeController::class,'logout']);
 
 /* ---------------------------------- SKILLS ----------------------------------- */
 // Create
-Route::get('/skill/create',[SkillController::class,'index']);
-Route::post('skill/create',[SkillController::class,'store']);
+Route::get('/skill/create',[SkillController::class,'index'])->name('get.skill.create');
+Route::post('skill/create',[SkillController::class,'store'])->name('post.skill.create');
 // Update
 Route::get("/skill/update/{id}",[SkillController::class,'editForm']);
 Route::post("/skill/update/{id}",[SkillController::class,'update']);
 // Destroy
 Route::get('/skill/delete/{id}',[SkillController::class,'delete']);
-Route::get('/skill/list',[SkillController::class,'list']);
+Route::get('/skill/list',[SkillController::class,'list'])->name('get.skill.list');
 
 /* ---------------------------------- REQUESTS ----------------------------------- */
 // Create

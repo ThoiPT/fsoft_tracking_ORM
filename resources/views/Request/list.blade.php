@@ -43,7 +43,7 @@
                             </td>
 
                             <td>{{ $item->title }}</td>
-                            <td>{{ $item->nameSkill }}</td>
+                            <td>{{ $item->skill->name }}</td>
                             <td>{!!$item->description !!}</td>
 {{--                            <td></td>--}}
 {{--                            <td></td>--}}
