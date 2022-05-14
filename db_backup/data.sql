@@ -146,7 +146,7 @@ CREATE TABLE `request_skill` (
 
 LOCK TABLES `request_skill` WRITE;
 /*!40000 ALTER TABLE `request_skill` DISABLE KEYS */;
-INSERT INTO `request_skill` VALUES (1,2,NULL,NULL),(1,3,NULL,NULL),(5,1,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(5,2,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(5,3,'2022-05-13 23:26:03','2022-05-13 23:26:03');
+INSERT INTO `request_skill` VALUES (1,2,NULL,NULL),(1,3,NULL,NULL),(5,1,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(5,2,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(5,3,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(6,2,'2022-05-14 09:52:12','2022-05-14 09:52:12'),(6,4,'2022-05-14 09:52:12','2022-05-14 09:52:12'),(8,3,'2022-05-14 09:55:53','2022-05-14 09:55:53'),(8,4,'2022-05-14 09:55:53','2022-05-14 09:55:53'),(10,2,'2022-05-14 10:04:08','2022-05-14 10:04:08'),(11,3,'2022-05-14 10:31:59','2022-05-14 10:31:59'),(11,4,'2022-05-14 10:31:59','2022-05-14 10:31:59'),(11,5,'2022-05-14 10:31:59','2022-05-14 10:31:59');
 /*!40000 ALTER TABLE `request_skill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +173,7 @@ CREATE TABLE `requests` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,7 +182,7 @@ CREATE TABLE `requests` (
 
 LOCK TABLES `requests` WRITE;
 /*!40000 ALTER TABLE `requests` DISABLE KEYS */;
-INSERT INTO `requests` VALUES (1,'Tuyển dụng Full Stack','1 Year','Fresher',10,'2022-05-14','2022-05-24','<p><strong>Tuyển dụng FULL STACK</strong></p>',1,NULL,5,NULL,'2022-05-13 21:51:30','2022-05-13 21:51:30'),(3,'Combo Kháng Viêm','2 Year','asd',2,'2022-05-14','2022-05-25','<p>ads</p>',1,NULL,4,NULL,'2022-05-13 22:19:19','2022-05-13 22:19:19'),(4,'Combo Kháng Viêmdddd','2 Year','asd',2,'2022-05-14','2022-05-25','<p>asd</p>',1,NULL,5,NULL,'2022-05-13 22:21:27','2022-05-13 22:21:27'),(5,'Combo Kháng Viêm aaa','2 Year','Internship',2,'2022-05-14','2022-05-23','<p>NBote</p>',1,NULL,12,NULL,'2022-05-13 23:26:03','2022-05-13 23:26:03');
+INSERT INTO `requests` VALUES (1,'Tuyển dụng Full Stack','1 Year','Fresher',10,'2022-05-14','2022-05-24','<p><strong>Tuyển dụng FULL STACK</strong></p>',23,NULL,5,NULL,'2022-05-13 21:51:30','2022-05-14 08:21:57'),(3,'Combo Kháng Viêm','2 Year','asd',2,'2022-05-14','2022-05-25','<p>ads</p>',1,NULL,4,NULL,'2022-05-13 22:19:19','2022-05-13 22:19:19'),(4,'Combo Kháng Viêmdddd','2 Year','asd',2,'2022-05-14','2022-05-25','<p>asd</p>',1,NULL,5,NULL,'2022-05-13 22:21:27','2022-05-13 22:21:27'),(5,'Combo Kháng Viêm aaa','2 Year','Internship',2,'2022-05-14','2022-05-23','<p>NBote</p>',1,NULL,12,NULL,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(6,'ABC','1 Year','Fresher',3,'2022-05-21','2022-05-31','<p>Note</p>',1,1,7,NULL,'2022-05-14 09:52:12','2022-05-14 09:52:12'),(7,'Test Add User','1 Year 2','Fresher',2,'2022-05-12','2022-05-30','<p>AA</p>',1,1,11,NULL,'2022-05-14 09:55:18','2022-05-14 09:55:18'),(8,'Test Add User','1 Year 2','Fresher',2,'2022-05-12','2022-05-30','<p>AA</p>',1,NULL,11,NULL,'2022-05-14 09:55:53','2022-05-14 09:55:53'),(9,'ABC 1234','1 Year','agasgsa',2,'2022-05-21','2022-06-03','<p>aaaa</p>',1,NULL,7,NULL,'2022-05-14 09:58:43','2022-05-14 09:58:43'),(10,'Combo Kháng Viêm 2','1 Year','Fresher',2,'2022-05-16','2022-06-01','<p>ww</p>',1,2,8,NULL,'2022-05-14 10:04:08','2022-05-14 10:04:08'),(11,'TIẾT NIỆU23','2 Year','Fresher',2,'2022-05-15','2022-05-16','<p>Note</p>',1,1,8,NULL,'2022-05-14 10:31:59','2022-05-14 10:31:59');
 /*!40000 ALTER TABLE `requests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +234,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,7 +243,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Thời nè !!','thoi@gmail.com',NULL,'$2y$10$ZthbC7vhWL/OtussUSnSCu7mM7s09oRrffgajNLdEjmScH0dHKsvS',NULL,NULL,NULL,'2022-05-12 07:36:10','2022-05-12 07:36:10');
+INSERT INTO `users` VALUES (1,'Thời nè !!','thoi@gmail.com',NULL,'$2y$10$ZthbC7vhWL/OtussUSnSCu7mM7s09oRrffgajNLdEjmScH0dHKsvS',NULL,NULL,NULL,'2022-05-12 07:36:10','2022-05-12 07:36:10'),(2,'Admin','admin@fsoft.com',NULL,'$2y$10$yYaqBgH4uE1./5IzfZk4tunWEzQ/KwxK6bS7clIgSNGL5o/J.0U4q',NULL,NULL,NULL,'2022-05-14 10:02:26','2022-05-14 10:02:26');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -256,4 +256,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-14 13:40:34
+-- Dump completed on 2022-05-15  0:36:32
