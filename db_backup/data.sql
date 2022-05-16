@@ -16,6 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `cvitaes`
+--
+
+DROP TABLE IF EXISTS `cvitaes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cvitaes` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) DEFAULT 0,
+  `request_id` bigint(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cvitaes`
+--
+
+LOCK TABLES `cvitaes` WRITE;
+/*!40000 ALTER TABLE `cvitaes` DISABLE KEYS */;
+INSERT INTO `cvitaes` VALUES (4,'asda','+84399769420','Hà Nội','Filed',0,2,'2022-05-16 10:33:46','2022-05-16 10:33:46'),(6,'Trần Văn A','02224445558','Can Tho','Dang Test',0,4,'2022-05-16 11:22:50','2022-05-16 11:22:50'),(7,'Trần Văn A','02224445558','Can Tho','Dang Test',0,7,'2022-05-16 11:29:31','2022-05-16 11:34:30'),(8,'Thời nè !!','1231231221','Hà Nội','Filesd',0,3,'2022-05-16 11:29:38','2022-05-16 11:29:38'),(9,'Thời nè !!','1231231221','Hà Nội','Filesd',0,9,'2022-05-16 11:30:26','2022-05-16 11:31:26');
+/*!40000 ALTER TABLE `cvitaes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -56,7 +87,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +96,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2019_12_14_000001_create_personal_access_tokens_table',1),(5,'2022_05_12_155608_create_skills_table',2),(6,'2022_05_13_012728_create_requests_table',3),(7,'2022_05_13_165343_create_request__skills_table',4);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_08_19_000000_create_failed_jobs_table',1),(4,'2019_12_14_000001_create_personal_access_tokens_table',1),(5,'2022_05_12_155608_create_skills_table',1),(6,'2022_05_13_012728_create_requests_table',1),(7,'2022_05_16_103926_create_request_skill_table',1),(8,'2022_05_16_162512_create_c_vitaes_table',1);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +177,7 @@ CREATE TABLE `request_skill` (
 
 LOCK TABLES `request_skill` WRITE;
 /*!40000 ALTER TABLE `request_skill` DISABLE KEYS */;
-INSERT INTO `request_skill` VALUES (1,2,NULL,NULL),(1,3,NULL,NULL),(5,1,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(5,2,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(5,3,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(6,2,'2022-05-14 09:52:12','2022-05-14 09:52:12'),(6,4,'2022-05-14 09:52:12','2022-05-14 09:52:12'),(8,3,'2022-05-14 09:55:53','2022-05-14 09:55:53'),(8,4,'2022-05-14 09:55:53','2022-05-14 09:55:53'),(10,2,'2022-05-14 10:04:08','2022-05-14 10:04:08'),(11,3,'2022-05-14 10:31:59','2022-05-14 10:31:59'),(11,4,'2022-05-14 10:31:59','2022-05-14 10:31:59'),(11,5,'2022-05-14 10:31:59','2022-05-14 10:31:59');
+INSERT INTO `request_skill` VALUES (1,1,'2022-05-16 09:58:47','2022-05-16 09:58:47'),(3,3,'2022-05-16 11:00:28','2022-05-16 11:00:28'),(3,4,'2022-05-16 11:00:28','2022-05-16 11:00:28'),(4,1,'2022-05-16 11:22:21','2022-05-16 11:22:21');
 /*!40000 ALTER TABLE `request_skill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +204,7 @@ CREATE TABLE `requests` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -182,7 +213,7 @@ CREATE TABLE `requests` (
 
 LOCK TABLES `requests` WRITE;
 /*!40000 ALTER TABLE `requests` DISABLE KEYS */;
-INSERT INTO `requests` VALUES (1,'Tuyển dụng Full Stack','1 Year','Fresher',10,'2022-05-14','2022-05-24','<p><strong>Tuyển dụng FULL STACK</strong></p>',23,NULL,5,NULL,'2022-05-13 21:51:30','2022-05-14 08:21:57'),(3,'Combo Kháng Viêm','2 Year','asd',2,'2022-05-14','2022-05-25','<p>ads</p>',1,NULL,4,NULL,'2022-05-13 22:19:19','2022-05-13 22:19:19'),(4,'Combo Kháng Viêmdddd','2 Year','asd',2,'2022-05-14','2022-05-25','<p>asd</p>',1,NULL,5,NULL,'2022-05-13 22:21:27','2022-05-13 22:21:27'),(5,'Combo Kháng Viêm aaa','2 Year','Internship',2,'2022-05-14','2022-05-23','<p>NBote</p>',1,NULL,12,NULL,'2022-05-13 23:26:03','2022-05-13 23:26:03'),(6,'ABC','1 Year','Fresher',3,'2022-05-21','2022-05-31','<p>Note</p>',1,1,7,NULL,'2022-05-14 09:52:12','2022-05-14 09:52:12'),(7,'Test Add User','1 Year 2','Fresher',2,'2022-05-12','2022-05-30','<p>AA</p>',1,1,11,NULL,'2022-05-14 09:55:18','2022-05-14 09:55:18'),(8,'Test Add User','1 Year 2','Fresher',2,'2022-05-12','2022-05-30','<p>AA</p>',1,NULL,11,NULL,'2022-05-14 09:55:53','2022-05-14 09:55:53'),(9,'ABC 1234','1 Year','agasgsa',2,'2022-05-21','2022-06-03','<p>aaaa</p>',1,NULL,7,NULL,'2022-05-14 09:58:43','2022-05-14 09:58:43'),(10,'Combo Kháng Viêm 2','1 Year','Fresher',2,'2022-05-16','2022-06-01','<p>ww</p>',1,2,8,NULL,'2022-05-14 10:04:08','2022-05-14 10:04:08'),(11,'TIẾT NIỆU23','2 Year','Fresher',2,'2022-05-15','2022-05-16','<p>Note</p>',1,1,8,NULL,'2022-05-14 10:31:59','2022-05-14 10:31:59');
+INSERT INTO `requests` VALUES (1,'tuyen Dung 1','1 Year','Fresher',2,'2022-05-16','2022-06-02','<p><strong>sad</strong></p>',1,1,1,NULL,'2022-05-16 09:58:47','2022-05-16 09:58:47'),(2,'tuyen Dung 12','1 Year','Fresher',2,'2022-05-16','2022-06-02','<p><strong>sad</strong></p>',1,1,1,NULL,'2022-05-16 09:58:47','2022-05-16 09:58:47'),(3,'Tuyển dụng số 34','1 Year','Internship',2,'2022-05-17','2022-05-21','<p><strong>Note</strong></p>',1,1,2,NULL,'2022-05-16 11:00:28','2022-05-16 11:00:28'),(4,'Test Bug','1 Year','Fresher',2,'2022-05-17','2022-05-24','<p>Note 2</p>',1,1,3,NULL,'2022-05-16 11:22:21','2022-05-16 11:22:21');
 /*!40000 ALTER TABLE `requests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +232,7 @@ CREATE TABLE `skills` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `skills_name_unique` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,7 +241,7 @@ CREATE TABLE `skills` (
 
 LOCK TABLES `skills` WRITE;
 /*!40000 ALTER TABLE `skills` DISABLE KEYS */;
-INSERT INTO `skills` VALUES (1,'Front End',1,'2022-05-12 21:25:15','2022-05-12 21:25:15'),(2,'Back End',1,'2022-05-12 22:46:11','2022-05-12 22:46:11'),(3,'.NET',1,'2022-05-13 08:40:24','2022-05-13 08:40:24'),(4,'Java',0,'2022-05-14 04:49:44','2022-05-14 04:49:45'),(5,'Full Stack',0,'2022-05-14 04:49:41','2022-05-14 04:49:46'),(6,'HTML',1,'2022-05-13 21:50:09','2022-05-13 21:50:09'),(7,'CSS',1,'2022-05-13 21:50:15','2022-05-13 21:50:15'),(8,'Javascript',1,'2022-05-13 21:50:25','2022-05-13 21:50:25'),(9,'Ajax',1,'2022-05-13 21:50:32','2022-05-13 21:50:32'),(10,'Bootstrap',1,'2022-05-13 21:50:39','2022-05-13 21:50:39'),(11,'Bootstrap 23',1,'2022-05-13 23:06:35','2022-05-13 23:06:35'),(12,'Bootstrap 232',1,'2022-05-13 23:07:21','2022-05-13 23:07:21');
+INSERT INTO `skills` VALUES (1,'Front End',1,'2022-05-16 09:45:30','2022-05-16 09:45:30'),(2,'Back End',1,'2022-05-16 10:59:52','2022-05-16 10:59:52'),(3,'HTML',1,'2022-05-16 10:59:59','2022-05-16 10:59:59'),(4,'CSS',1,'2022-05-16 11:00:03','2022-05-16 11:00:03');
 /*!40000 ALTER TABLE `skills` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -234,7 +265,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,7 +274,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Thời nè !!','thoi@gmail.com',NULL,'$2y$10$ZthbC7vhWL/OtussUSnSCu7mM7s09oRrffgajNLdEjmScH0dHKsvS',NULL,NULL,NULL,'2022-05-12 07:36:10','2022-05-12 07:36:10'),(2,'Admin','admin@fsoft.com',NULL,'$2y$10$yYaqBgH4uE1./5IzfZk4tunWEzQ/KwxK6bS7clIgSNGL5o/J.0U4q',NULL,NULL,NULL,'2022-05-14 10:02:26','2022-05-14 10:02:26');
+INSERT INTO `users` VALUES (1,'Lê Phát Thời','thoi@gmail.com',NULL,'$2y$10$SpAwIEcY31yH.JDR2HYhFODIMI19DLAi4yhq9tm9rx9Xoj30rhra2',NULL,NULL,NULL,'2022-05-16 09:45:25','2022-05-16 09:45:25');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -256,4 +287,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-05-15  0:36:32
+-- Dump completed on 2022-05-17  1:36:10
