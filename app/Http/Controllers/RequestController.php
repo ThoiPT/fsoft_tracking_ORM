@@ -47,15 +47,15 @@ class RequestController extends Controller
 //        $id->update($request->all());
         // Xủ lý
         $id->update($request->all());
-        RequestSkill::where('request_id',$id->id)->delete();
+//        RequestSkill::where('request_id',$id->id)->delete();
 
-        foreach ($request->other_id as $item)
-        {
-            RequestSkill::create([
-                'request_id'=>$id->id,
-                'skill_id'=>$item
-            ]);
-        }
+//        foreach ($request->other_id as $item)
+//        {
+//            RequestSkill::create([
+//                'request_id'=>$id->id,
+//                'skill_id'=>$item
+//            ]);
+//        }
         return \redirect('request/list');
     }
 
