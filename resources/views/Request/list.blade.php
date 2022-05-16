@@ -20,7 +20,6 @@
 {{--                            <th>Other</th>--}}
 {{--                            <th>Account</th>--}}
                             <th style="width: 186px">Action</th>
-                            <th style="width: 100px">ADD CV</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,7 +52,7 @@
                                 <a href="/request/update/{{$item->id}}" class="btn btn-warning">UPDATE</a>
                                 <a href="/request/delete/{{$item->id}}" class="btn btn-danger">DELETE</a>
                             </td>
-                            <td><a class="btn btn-success">ADD CV</a></td>
+
                         </tr>
                         @endforeach
 

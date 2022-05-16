@@ -41,4 +41,9 @@ class Request extends Model
     {
         return $this -> belongsTo(User::class,'user_id');
     }
+
+    public function cvitaes()
+    {
+        return $this -> hasMany(CVitae::class,'request_id','id');
+    }
 }

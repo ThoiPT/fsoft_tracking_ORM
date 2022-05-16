@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('file');
-            $table->integer('status');
+            $table->integer('status')->default('0');
             $table->bigInteger('request_id');
             $table->timestamps();
         });

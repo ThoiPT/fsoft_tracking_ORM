@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\CvController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,4 +45,15 @@ Route::post('/request/update/{id}',[RequestController::class,'update']);
 // Destroy
 Route::get('/request/delete/{id}',[RequestController::class,'delete']);
 Route::get('/request/list',[RequestController::class,'list']);
+
+/* ------------------------------------CV ---------------------------------------- */
+Route::get('/cv/create',[CvController::class,'index'])->name('get.cv.create');
+Route::post('/cv/create',[CvController::class,'store'])->name('post.cv.create');
+
+Route::get('/cv/update/{id}',[CvController::class,'editForm'])->name('get.cv.editForm');
+Route::post('/cv/update/{id}',[CvController::class,'update'])->name('post.cv.update');
+
+Route::get('/cv/delete/{id}',[CvController::class,'delete'])->name('get.cv.delete');
+
+Route::get('/cv/list',[CvController::class,'list'])->name('get.cv.list');
 Auth::routes();

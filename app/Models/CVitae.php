@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CVitae extends Model
 {
+    use HasFactory;
     protected $fillable = [
       'name',
       'phone',
@@ -15,5 +16,13 @@ class CVitae extends Model
       'status',
       'request_id'
     ];
-    use HasFactory;
+    protected $table = "cvitaes";
+
+    public function request()
+    {
+        return $this -> belongsTo(Request::class,'request_id');
+    }
+
+
+
 }
