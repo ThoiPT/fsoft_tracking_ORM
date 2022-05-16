@@ -25,7 +25,7 @@ class Request extends Model
         'group_id'
     ];
     protected $table = "requests";
-
+    public $incrementing = false;
     public function skill()
     {
         return $this ->belongsTo(Skill::class, 'skill_id');
