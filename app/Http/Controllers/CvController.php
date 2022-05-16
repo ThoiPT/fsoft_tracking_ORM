@@ -17,7 +17,7 @@ class CvController extends Controller
     public function store(Request $request)
     {
         CVitae::create($request->all());
-        return redirect()->route('get.cv.create');
+        return redirect()->route('get.cv.list');
     }
 
     public function editForm($id)
