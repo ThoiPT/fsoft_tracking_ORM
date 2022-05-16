@@ -10,7 +10,7 @@ class RequestSkill extends Model
     protected $fillable = ['request_id','skill_id'];
     protected $table = "request_skill";
 
-    public $incrementing = false;
+
     use HasFactory;
 
     public function skill()
