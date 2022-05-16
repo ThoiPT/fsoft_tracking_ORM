@@ -37,11 +37,10 @@ class RequestController extends Controller
     {
         $request= RequestModel::find($id);
         $skillName = Skill::all();
-        $requestSkill = RequestSkill::all();
+//        $requestSkill = RequestSkill::all();
         $data = RequestModel::all();
-        return view("Request/update",compact('skillName','data','requestSkill'))
-            ->with('requests',$request)
-            ->with('requestSkill',$requestSkill);
+        return view("Request/update",compact('skillName','data'))
+            ->with('requests',$request);
     }
     public function update(Request $request, RequestModel $id)
     {
