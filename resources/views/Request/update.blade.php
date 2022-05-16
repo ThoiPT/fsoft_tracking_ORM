@@ -31,16 +31,16 @@
                         </select>
                     </div>
 
-                    <div class="form-group" data-select2-id="120">
-                        <label>Other Skill</label>
-                        <div class="select2-purple" data-select2-id="119">
-                            <select name="other_id[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select other skill" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">
-                                @foreach($requestSkill as $item)
-                                    <option @if($item->request_id == $requests->id) selected="selected" @endif value="{{$item -> request_id}}">{{$item->skill->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+{{--                    <div class="form-group" data-select2-id="120">--}}
+{{--                        <label>Other Skill</label>--}}
+{{--                        <div class="select2-purple" data-select2-id="119">--}}
+{{--                            <select name="other_id[]" class="select2 select2-hidden-accessible" multiple data-placeholder="Select other skill" data-dropdown-css-class="select2-purple" style="width: 100%;" aria-hidden="true">--}}
+{{--                                @foreach($requestSkill as $item)--}}
+{{--                                    <option @if($item->request_id == $requests->id) selected="selected" @endif value="{{$item -> request_id}}">{{$item->skill->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess">
