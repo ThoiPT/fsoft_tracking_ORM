@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('request_skills', function (Blueprint $table) {
+        Schema::create('request_skill', function (Blueprint $table) {
             $table->bigInteger('request_id')->unsigned()->nullable();
             $table->bigInteger('skill_id')->unsigned()->nullable();
             $table->timestamps();
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_skills');
+        Schema::dropIfExists('request_skill');
     }
 };
