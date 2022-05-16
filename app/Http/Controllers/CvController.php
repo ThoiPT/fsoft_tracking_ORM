@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\CVitae;
 use App\Models\Request as RequestModel;
 use Illuminate\Http\Request;
@@ -17,6 +16,8 @@ class CvController extends Controller
     public function store(Request $request)
     {
         CVitae::create($request->all());
+        $filename = $request->file->getClientOriginalName();
+        $request->file->move(public_path('uploads'),$filename);
         return redirect()->route('get.cv.list');
     }
 

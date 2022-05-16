@@ -8,7 +8,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <form action="/cv/create" method="POST">
+                <form action="{{route('post.cv.create')}}" method="POST" enctype="multipart/form-data">
                     @csrf
 {{--                    <input name="user_id" hidden value="{{ auth()->user()->id }}">--}}
 
@@ -53,7 +53,7 @@
                         <label class="col-form-label" for="inputSuccess">
                             File
                         </label>
-                        <input type="text" class="form-control success" name="file" id="inputSuccess" placeholder="File">
+                        <input type="file" class="form-control success" name="file" id="inputSuccess" placeholder="File">
                     </div>
 
 {{--                    <div class="form-group">--}}
