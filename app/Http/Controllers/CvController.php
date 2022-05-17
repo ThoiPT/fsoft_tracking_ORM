@@ -26,8 +26,8 @@ class CvController extends Controller
     public function editForm($id)
     {
         $cv = CVitae::find($id);
-        $cvData = CVitae::all();
-        return view("Cv/update",compact('cvData'))->with('cvitaes',$cv);
+        $rqData= RequestModel::all();
+        return view("Cv/update",compact('rqData'))->with('cvitaes',$cv);
     }
 
     public function update(Request $request, CVitae $id)
@@ -35,6 +35,7 @@ class CvController extends Controller
         $id->update($request->all());
 //        $filename = $request->file->extension();
 //        $request->file->move(public_path('uploads'),$filename);
+
         return redirect()->route('get.cv.list');
     }
 

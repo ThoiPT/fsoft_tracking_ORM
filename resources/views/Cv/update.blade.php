@@ -10,11 +10,11 @@
             <div class="card-body">
                 <form action="/cv/update/{{$cvitaes -> id}}" method="POST">
                     @csrf
-                    <div class="form-group" data-select2-id="74">
+                    <div class="form-group">
                         <label>Add to</label>
                         <select name="request_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" aria-hidden="true">
-                            @foreach($cvData as $cvd)
-                                <option selected="selected" value="{{ $cvitaes -> id }}"> {{ $cvd->request->title ?? ''}}</option>
+                            @foreach($rqData as $cvd)
+                                <option selected="selected" value="{{ $cvd -> id}}">{{ $cvd->title }}</option>
                             @endforeach
                         </select>
                     </div>
