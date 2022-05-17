@@ -42,20 +42,43 @@
                         <input type="text" class="form-control success" name="address" id="inputSuccess" value="{{ $cvitaes -> address }}">
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-form-label" for="inputSuccess">
-                            File
-                        </label>
-                        <input  type="text" class="form-control success" name="file" id="inputSuccess" value="{{ $cvitaes -> file }}">
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                        <label class="col-form-label" for="inputSuccess">--}}
+{{--                            File--}}
+{{--                        </label>--}}
+{{--                        <input  type="text" class="form-control success" name="file" id="inputSuccess" value="{{ $cvitaes -> file }}">--}}
+{{--                    </div>--}}
 
-                    <div class="form-group">
-                        <label class="col-form-label" for="inputSuccess">
-                            Status: 0 = New, 1 = Interview, 2 = Offer, 3 = Onboard
-                        </label>
-                        <input type="number" class="form-control success" name="status" id="inputSuccess" value="{{ $cvitaes->status }}">
-                    </div>
+{{--                    <div class="form-group">--}}
+{{--                        <label class="col-form-label" for="inputSuccess">--}}
+{{--                            File--}}
+{{--                        </label>--}}
+{{--                        <input type="file" class="form-control success" name="file" id="inputSuccess" placeholder="File">--}}
+{{--                    </div>--}}
 
+                    <div class="col-sm-6">
+                        <label class="col-form-label" for="inputSuccess">Status</label>
+                        <div class="form-group clearfix">
+                            <div class="icheck-success d-inline">
+                                <input type="radio" name="status" value="1" id="radioSuccess1">
+                                <label for="radioSuccess1">
+                                    Interview
+                                </label>
+                            </div><br>
+                            <div class="icheck-info d-inline">
+                                <input type="radio" name="status" value="2" id="radioSuccess3">
+                                <label for="radioSuccess3">
+                                    Offer
+                                </label>
+                            </div><br>
+                            <div class="icheck-warning d-inline">
+                                <input type="radio" name="status" value="3" id="radioSuccess4">
+                                <label for="radioSuccess4">
+                                    Onboard
+                                </label>
+                            </div><br>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-danger"style="color: white">Confirm</button>
                     </div>

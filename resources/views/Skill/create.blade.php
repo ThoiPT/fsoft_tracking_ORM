@@ -15,9 +15,21 @@
                         <input type="text" class="form-control" name="name" id="exampleInputSkill" placeholder="Enter Skill">
                     </div>
 
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Status</label>
-                        <input type="number" class="form-control" name="status" id="exampleInputSkill" placeholder="0:OFF - 1:ON">
+                    <div class="col-sm-6">
+                        <div class="form-group clearfix">
+                            <div class="icheck-success d-inline">
+                                <input type="radio" name="status" checked="" value="1" id="radioSuccess1">
+                                <label for="radioSuccess1">
+                                    ON
+                                </label>
+                            </div><br>
+                            <div class="icheck-danger d-inline">
+                                <input type="radio" name="status" value="0" id="radioSuccess3">
+                                <label for="radioSuccess3">
+                                    OFF
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

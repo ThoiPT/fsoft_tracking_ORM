@@ -9,7 +9,8 @@ class CvController extends Controller
 {
     public function index()
     {
-       $request = RequestModel::all();
+       // Lấy ra các Request có trạng thái là On (value > 0)
+       $request = RequestModel::all()->where('status','>',0);
        return view('Cv/create',compact('request'));
     }
 
@@ -31,6 +32,8 @@ class CvController extends Controller
     public function update(Request $request, CVitae $id)
     {
         $id->update($request->all());
+//        $filename = $request->file->extension();
+//        $request->file->move(public_path('uploads'),$filename);
         return redirect()->route('get.cv.list');
     }
 

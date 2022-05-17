@@ -56,18 +56,6 @@
                         <input type="file" class="form-control success" name="file" id="inputSuccess" placeholder="File">
                     </div>
 
-{{--                    <div class="form-group">--}}
-{{--                        <label for="exampleInputFile">File input</label>--}}
-{{--                        <div class="input-group">--}}
-{{--                            <div class="custom-file">--}}
-{{--                                <input type="file" class="custom-file-input" id="exampleInputFile">--}}
-{{--                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="input-group-append">--}}
-{{--                                <span class="input-group-text">Upload</span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
 {{--                    <div class="form-group" data-select2-id="74">--}}
 {{--                        <label>Select Skill</label>--}}
 {{--                        <select name="skill_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true">--}}
@@ -76,15 +64,6 @@
 {{--                            @endforeach--}}
 {{--                        </select>--}}
 {{--                    </div>--}}
-
-
-{{--                    <div class="form-group">--}}
-{{--                        <label class="col-form-label" for="inputSuccess">--}}
-{{--                            Status--}}
-{{--                        </label>--}}
-{{--                        <input type="number" class="form-control success" name="status" id="inputSuccess" placeholder="0:OFF - 1:ON">--}}
-{{--                    </div>--}}
-
                     <div class="form-group">
                         <button type="submit" class="btn btn-danger"style="color: white">Confirm</button>
                     </div>

@@ -80,11 +80,21 @@
                         <textarea name="description" id="editor"></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-form-label" for="inputSuccess">
-                            Status
-                        </label>
-                        <input type="number" class="form-control success" name="status" id="inputSuccess" placeholder="0:OFF - 1:ON">
+                    <div class="col-sm-6">
+                        <div class="form-group clearfix">
+                            <div class="icheck-success d-inline">
+                                <input type="radio" name="status" checked="" value="1" id="radioSuccess1">
+                                <label for="radioSuccess1">
+                                    ON
+                                </label>
+                            </div><br>
+                            <div class="icheck-danger d-inline">
+                                <input type="radio" name="status" value="0" id="radioSuccess3">
+                                <label for="radioSuccess3">
+                                    OFF
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-group">

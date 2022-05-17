@@ -15,9 +15,22 @@
                         <label for="exampleInputEmail1">Skill Name</label>
                         <input type="text" class="form-control" name="name" id="exampleInputSkill" value="{{ $skills -> name }}">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Status</label>
-                        <input type="number" class="form-control" name="status" id="exampleInputSkill" value="{{ $skills -> status }}">
+
+                    <div class="col-sm-6">
+                        <div class="form-group clearfix">
+                            <div class="icheck-success d-inline">
+                                <input type="radio" name="status" @if($skills->status == 1) checked="" @endif value="1" id="radioSuccess1">
+                                <label for="radioSuccess1">
+                                    ON
+                                </label>
+                            </div><br>
+                            <div class="icheck-danger d-inline">
+                                <input type="radio" name="status" @if($skills->status == 0)  checked="" @endif value="0"  id="radioSuccess3">
+                                <label for="radioSuccess3">
+                                    OFF
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- /.card-body -->

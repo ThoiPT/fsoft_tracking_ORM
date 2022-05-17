@@ -14,7 +14,8 @@ class RequestController extends Controller
 {
     public function index()
     {
-        $data = Skill::all();
+        // Chỉ lấy ra các Skill có status > 0
+        $data = Skill::all()->where('status','>',0);
         return view("Request/create",compact('data'));
     }
 

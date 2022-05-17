@@ -31,13 +31,9 @@
                                     <small class="badge badge-success">
                                         <i class="fa flag-icon-er"></i>Request Open
                                     </small>
-                                @elseif($item -> status == 2)
+                                @else
                                     <small class="badge badge-danger">
                                         <i class="fa flag-icon-er"></i>Request Close
-                                    </small>
-                                    @else
-                                    <small class="badge badge-warning">
-                                        <i class="fa flag-icon-er"></i>Status Error
                                     </small>
                                 @endif
                             </td>
@@ -52,7 +48,6 @@
                                 <a href="/request/update/{{$item->id}}" class="btn btn-warning">UPDATE</a>
                                 <a href="/request/delete/{{$item->id}}" class="btn btn-danger">DELETE</a>
                             </td>
-
                         </tr>
                         @endforeach
 

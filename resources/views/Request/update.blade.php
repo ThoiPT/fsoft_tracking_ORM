@@ -83,12 +83,30 @@
                         <textarea name="description" id="editor"> {!! $requests -> description !!}</textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label class="col-form-label" for="inputSuccess">
-                            Status (1:ON - 2:OFF)
-                        </label>
-                        <input value="{{ $requests -> status }}" type="number" class="form-control success" name="status" id="inputSuccess" placeholder="0:OFF - 1:ON">
+{{--                    <div class="form-group">--}}
+{{--                        <label class="col-form-label" for="inputSuccess">--}}
+{{--                            Status (1:ON - 2:OFF)--}}
+{{--                        </label>--}}
+{{--                        <input value="{{ $requests -> status }}" type="number" class="form-control success" name="status" id="inputSuccess" placeholder="0:OFF - 1:ON">--}}
+{{--                    </div>--}}
+
+                    <div class="col-sm-6">
+                        <div class="form-group clearfix">
+                            <div class="icheck-success d-inline">
+                                <input type="radio" name="status" @if($requests -> status == 1)  checked="" @endif value="1" id="radioSuccess1">
+                                <label for="radioSuccess1">
+                                    ON
+                                </label>
+                            </div><br>
+                            <div class="icheck-danger d-inline">
+                                <input type="radio" name="status" @if($requests -> status == 0) checked="" @endif value="0" id="radioSuccess3">
+                                <label for="radioSuccess3">
+                                    OFF
+                                </label>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-success"style="color: white">UPDATE</button>
                     </div>

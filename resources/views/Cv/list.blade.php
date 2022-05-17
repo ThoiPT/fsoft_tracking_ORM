@@ -42,9 +42,17 @@
                                             <i class="far fa-check-square"></i>New
                                         </small>
                                     </td>
-                                @else($item->status == 1)
+                                @elseif($item->status == 1)
                                     <td>
-                                        <small class="badge badge-danger"> Interview</small>
+                                        <small class="badge badge-info">Interview</small>
+                                    </td>
+                                    @elseif($item->status == 2)
+                                    <td>
+                                        <small class="badge badge-primary">Offer</small>
+                                    </td>
+                                    @else
+                                    <td>
+                                        <small class="badge badge-warning">Onboard</small>
                                     </td>
                                 @endif
                                 <td>{{ $item->request->title ?? 'None'}}</td>

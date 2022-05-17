@@ -23,9 +23,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
+                            <th>Status</th>
                             <th>Skill Name</th>
                             <th>Created At</th>
-                            <th>Status</th>
+                            <th>Updated At</th>
                             <th style="width: 100px">Action</th>
                         </tr>
                         </thead>
@@ -33,12 +34,10 @@
                         @foreach($list as $item)
                         <tr>
                             <td>{{ $item -> id }}</td>
-                            <td>{{ $item -> name }}</td>
-                            <td>{{ $item -> created_at }}</td>
                             @if($item ->status == 1)
                                 <td>
                                     <small class="badge badge-success">
-                                        <i class="far fa-check-square"></i>ON
+                                        <i class="far fa-check-square"></i> ON
                                     </small>
                                 </td>
                             @else($item ->status == 2)
@@ -46,6 +45,10 @@
                                     <small class="badge badge-danger"> OFF</small>
                                 </td>
                             @endif
+                            <td>{{ $item -> name }}</td>
+                            <td>{{ $item -> created_at }}</td>
+                            <td>{{ $item -> updated_at }}</td>
+
                             <td>
                                 <a href="/skill/update/{{$item->id}}"  class="btn btn-success">Update</a>
                                 <a href="/skill/delete/{{$item->id}}" class="btn btn-danger">Delete</a>
