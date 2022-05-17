@@ -44,6 +44,7 @@
                             </tr>
                         @endforeach
                         </tbody>
+                        <br>{{$list->links()}}<hr>
                     </table>
                 </div>
                 <!-- /.card-body -->

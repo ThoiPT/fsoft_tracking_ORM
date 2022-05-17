@@ -35,7 +35,7 @@ class DepartmentController extends Controller
     }
 
     public function list(){
-        $list = Department::all();
+        $list = Department::paginate(10);
         return view("Department/list",compact('list'));
     }
 

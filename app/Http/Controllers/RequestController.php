@@ -80,7 +80,7 @@ class RequestController extends Controller
     // show
     public function list()
     {
-        $data = RequestModel::all();
+        $data = RequestModel::paginate(10);
         return view("Request/list",compact('data'));
     }
 }

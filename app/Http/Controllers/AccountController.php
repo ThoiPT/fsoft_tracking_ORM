@@ -36,7 +36,8 @@ class AccountController extends Controller
         return redirect()->route('get.account.list');
     }
     public function list(){
-        $list = User::all();
+//        $list = User::all();
+        $list = User::paginate(10);
         return view("Account/list",compact('list'));
     }
 }

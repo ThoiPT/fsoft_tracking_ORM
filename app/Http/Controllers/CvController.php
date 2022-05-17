@@ -42,7 +42,7 @@ class CvController extends Controller
     public function list()
     {
         $request = RequestModel::all();
-        $list = CVitae::all();
+        $list = CVitae::paginate(10);
         return view('Cv/list',compact('list'))->with('request',$request);
     }
 

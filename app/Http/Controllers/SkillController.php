@@ -39,10 +39,9 @@ class SkillController extends Controller
         Skill::destroy($id);
         return \redirect('skill/list');
     }
-
     // show
     public function list(){
-        $list = Skill::all();
+        $list = Skill::paginate(5);
         return view("Skill/list",compact('list'));
     }
 }
