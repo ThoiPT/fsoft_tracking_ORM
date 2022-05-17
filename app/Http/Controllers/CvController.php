@@ -16,6 +16,7 @@ class CvController extends Controller
 
     public function store(Request $request)
     {
+        $request -> validate(['name'=>'required','phone'=>'required','address'=>'required','file'=>'required','status'=>'required']);
         CVitae::create($request->all());
         $filename = $request->file->getClientOriginalName();
         $request->file->move(public_path('uploads'),$filename);

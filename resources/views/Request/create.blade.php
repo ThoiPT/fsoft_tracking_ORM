@@ -16,6 +16,7 @@
                             Request Title
                         </label>
                         <input type="text" class="form-control success" name="title" id="inputSuccess" placeholder="Request Title">
+                        <span style="color: red">@error('title')* {{$message}}@enderror</span>
                     </div>
 
 
@@ -43,14 +44,17 @@
                         <label class="col-form-label" for="inputSuccess">
                             Experience
                         </label>
-                        <input type="text" class="form-control success" name="experience" id="inputSuccess" placeholder="Request Title">
+                        <input type="text" class="form-control success" name="experience" id="inputSuccess" placeholder="Experience">
+                        <span style="color: red">@error('experience')* {{$message}}@enderror</span>
                     </div>
+
 
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess">
                             Slot Recruits
                         </label>
-                        <input type="number" class="form-control success" name="numRecruit" id="inputSuccess" placeholder="Request Title">
+                        <input type="number" class="form-control success" name="numRecruit" id="inputSuccess" placeholder="Slot">
+                        <span style="color: red">@error('numRecruit')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">
@@ -58,6 +62,7 @@
                             Level
                         </label>
                         <input type="text" class="form-control success" name="level" id="inputSuccess" placeholder="EX: Internship, Junior">
+                        <span style="color: red">@error('level')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">
@@ -65,6 +70,7 @@
                             Open Date
                         </label>
                         <input type="date" class="form-control success" name="open" id="inputSuccess" placeholder="EX: Internship, Junior">
+                        <span style="color: red">@error('open')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">
@@ -72,18 +78,20 @@
                             Close Date
                         </label>
                         <input type="date" class="form-control success" name="close" id="inputSuccess" placeholder="EX: Internship, Junior">
+                        <span style="color: red">@error('close')* {{$message}}@enderror</span>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess">
                             Description
                         </label>
                         <textarea name="description" id="editor"></textarea>
+                        <span style="color: red">@error('description')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group clearfix">
                             <div class="icheck-success d-inline">
-                                <input type="radio" name="status" checked="" value="1" id="radioSuccess1">
+                                <input type="radio" name="status"  value="1" id="radioSuccess1">
                                 <label for="radioSuccess1">
                                     ON
                                 </label>
@@ -95,6 +103,7 @@
                                 </label>
                             </div>
                         </div>
+                        <span style="color: red">@error('status')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">

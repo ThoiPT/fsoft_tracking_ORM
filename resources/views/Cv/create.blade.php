@@ -10,8 +10,6 @@
             <div class="card-body">
                 <form action="{{route('post.cv.create')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-{{--                    <input name="user_id" hidden value="{{ auth()->user()->id }}">--}}
-
                     <div class="form-group" data-select2-id="74">
                         <label>Add to</label>
                         <select name="request_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" aria-hidden="true">
@@ -26,6 +24,7 @@
                             Full Name
                         </label>
                         <input type="text" class="form-control success" name="name" id="inputSuccess" placeholder="Full Name">
+                        <span style="color: red">@error('name')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">
@@ -33,6 +32,7 @@
                             Phone Number
                         </label>
                         <input type="text" class="form-control success" name="phone" id="inputSuccess" placeholder="Phone Number">
+                        <span style="color: red">@error('phone')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">
@@ -40,6 +40,7 @@
                             Address
                         </label>
                         <input type="text" class="form-control success" name="address" id="inputSuccess" placeholder="Address">
+                        <span style="color: red">@error('address')* {{$message}}@enderror</span>
                     </div>
 
                     <div hidden class="form-group">
@@ -47,6 +48,7 @@
                             Status
                         </label>
                         <input type="number" class="form-control success" name="status" id="inputSuccess" value="0">
+                        <span style="color: red">@error('status')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="form-group">
@@ -54,6 +56,7 @@
                             File
                         </label>
                         <input type="file" class="form-control success" name="file" id="inputSuccess" placeholder="File">
+                        <span style="color: red">@error('file')* {{$message}}@enderror</span>
                     </div>
 
 {{--                    <div class="form-group" data-select2-id="74">--}}

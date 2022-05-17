@@ -4,19 +4,17 @@
         <!-- general form elements disabled -->
         <div class="card card-warning">
             <div class="card-header">
-                <h3 class="card-title">ADD Curriculum Vitae</h3>
+                <h3 class="card-title" style="color: white; font-weight: bold">Update Curriculum Vitae</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
                 <form action="/cv/update/{{$cvitaes -> id}}" method="POST">
                     @csrf
-{{--                                        <input name="user_id" hidden value="{{ auth()->user()->id }}">--}}
                     <div class="form-group" data-select2-id="74">
                         <label>Add to</label>
                         <select name="request_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" aria-hidden="true">
                             @foreach($cvData as $cvd)
-
-                            <option selected="selected" value="{{ $cvitaes -> id }}"> {{ $cvd->request->title ?? 'None' }}</option>
+                                <option selected="selected" value="{{ $cvitaes -> id }}"> {{ $cvd->request->title ?? ''}}</option>
                             @endforeach
                         </select>
                     </div>

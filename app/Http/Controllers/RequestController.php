@@ -22,6 +22,16 @@ class RequestController extends Controller
     // create
     public function store(Request $request)
     {
+        $request -> validate([
+            'title'=>'required',
+            'experience'=>'required',
+            'level'=>'required',
+            'numRecruit'=>'required',
+            'open'=>'required',
+            'close'=>'required',
+            'description'=>'required',
+            'status'=>'required',
+        ]);
         $data = RequestModel::create($request->all());
         foreach ($request->other_id as $item)
         {

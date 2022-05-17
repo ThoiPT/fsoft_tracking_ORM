@@ -7,18 +7,20 @@
                 <h3 class="card-title">New Skill</h3>
             </div>
             <!-- form start -->
+
             <form action="/skill/create" method="POST">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Skill Name</label>
                         <input type="text" class="form-control" name="name" id="exampleInputSkill" placeholder="Enter Skill">
+                        <span style="color: red">@error('name')* {{$message}}@enderror</span>
                     </div>
 
                     <div class="col-sm-6">
                         <div class="form-group clearfix">
                             <div class="icheck-success d-inline">
-                                <input type="radio" name="status" checked="" value="1" id="radioSuccess1">
+                                <input type="radio" name="status" value="1" id="radioSuccess1">
                                 <label for="radioSuccess1">
                                     ON
                                 </label>
@@ -31,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <span style="color: red">@error('status')* {{$message}}@enderror</span>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
