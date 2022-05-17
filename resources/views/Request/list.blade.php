@@ -39,7 +39,7 @@
                             </td>
 
                             <td>{{ $item->title }}</td>
-                            <td>{{ $item->skill->name }}</td>
+                            <td>{{ $item->skill->name ?? 'None' }}</td>
                             <td>{!!$item->description !!}</td>
                             <td>{{ $item -> user->email ?? 'None' }}</td>
 {{--                            <td></td>--}}

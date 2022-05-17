@@ -46,7 +46,6 @@ class RequestController extends Controller
     // update
     public function editForm($id)
     {
-
         $request= RequestModel::find($id);
         $skillName = Skill::all();
 //        $requestSkill = RequestSkill::all();

@@ -17,7 +17,6 @@
                 <a href="/logout" class="d-block">Logout</a>
             </div>
         </div>
-
         <!-- SidebarSearch Form -->
         <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
@@ -29,13 +28,13 @@
                 </div>
             </div>
         </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-header">RECRUITMENT MANAGEMENT</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
+                        <i class="nav-icon fas fa-columns"></i>
                         <p>
                             SKILL - JOB
                             <i class="fas fa-angle-left right"></i>
@@ -59,7 +58,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Request
                             <i class="fas fa-angle-left right"></i>
@@ -83,7 +82,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
+                        <i class="nav-icon fas fa-columns"></i>
                         <p>
                             Curriculum Vitae
                             <i class="fas fa-angle-left right"></i>
@@ -105,9 +104,10 @@
                     </ul>
                 </li>
 
+                <li class="nav-header">ACCOUNT MANAGEMENT</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
+                        <i class="nav-icon fas fa-user-friends"></i>
                         <p>
                             Department
                             <i class="fas fa-angle-left right"></i>
@@ -131,7 +131,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-search"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Account
                             <i class="fas fa-angle-left right"></i>
@@ -153,6 +153,7 @@
                     </ul>
                 </li>
 
+                <li class="nav-header">REPORT</li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -62,6 +62,11 @@ Route::get('/cv/list',[CvController::class,'list'])->name('get.cv.list');
 Route::get('/account/create',[AccountController::class,'index'])->name('get.account.create');
 Route::post('/account/create',[AccountController::class,'store'])->name('post.account.create');
 
+Route::get('/account/update/{id}',[AccountController::class,'editForm'])->name('get.account.editForm');
+Route::post('/account/update/{id}',[AccountController::class,'update'])->name('post.account.update');
+
+Route::get('/account/delete/{id}',[AccountController::class,'delete'])->name('get.account.delete');
+Route::get('/account/list',[AccountController::class,'list'])->name('get.account.list');
 
 
 /* -------------------------------------- Department ----------------------------------- */
