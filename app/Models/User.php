@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'group_id',
     ];
 
     protected $table = "users";
@@ -48,5 +49,10 @@ class User extends Authenticatable
     public function requests()
     {
         return $this->hasMany(Request::class,'user_id','id');
+    }
+
+    public function department()
+    {
+        return $this -> belongsTo(Department::class,'group_id');
     }
 }

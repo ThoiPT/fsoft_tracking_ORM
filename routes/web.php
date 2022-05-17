@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\CvController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\DepartmentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +56,22 @@ Route::get('/cv/update/{id}',[CvController::class,'editForm'])->name('get.cv.edi
 Route::post('/cv/update/{id}',[CvController::class,'update'])->name('post.cv.update');
 
 Route::get('/cv/delete/{id}',[CvController::class,'delete'])->name('get.cv.delete');
-
 Route::get('/cv/list',[CvController::class,'list'])->name('get.cv.list');
+
+/* ------------------------------------ Account ------------------------------------ */
+Route::get('/account/create',[AccountController::class,'index'])->name('get.account.create');
+Route::post('/account/create',[AccountController::class,'store'])->name('post.account.create');
+
+
+
+/* -------------------------------------- Department ----------------------------------- */
+Route::get('/department/create',[DepartmentController::class,'index'])->name('get.department.create');
+Route::post('/department/create',[DepartmentController::class,'store'])->name('post.department.create');
+
+Route::get('/department/update/{id}',[DepartmentController::class,'editForm'])->name('get.department.editForm');
+Route::post('/department/update/{id}',[DepartmentController::class,'update'])->name('post.department.update');
+
+Route::get('/department/delete/{id}',[DepartmentController::class,'delete'])->name('get.department.delete');
+
+Route::get('/department/list',[DepartmentController::class,'list'])->name('get.department.list');
 Auth::routes();
