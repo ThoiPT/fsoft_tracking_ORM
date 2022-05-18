@@ -16,7 +16,8 @@ class RequestController extends Controller
     {
         // Chỉ lấy ra các Skill có status > 0
         $data = Skill::all()->where('status','>',0);
-        return view("Request/create",compact('data'));
+        $user = User::all();
+        return view("Request/create",compact('data','user'));
     }
 
     // create
@@ -31,6 +32,7 @@ class RequestController extends Controller
             'close'=>'required',
             'description'=>'required',
             'status'=>'required',
+            'group_id'=>'required'
         ]);
         $data = RequestModel::create($request->all());
         foreach ($request->other_id as $item)

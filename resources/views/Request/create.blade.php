@@ -11,6 +11,9 @@
                 <form action="/request/create" method="POST" id="frmAddRequest">
                     @csrf
                     <input name="user_id" hidden value="{{ auth()->user()->id }}">
+
+                    <!-- Xem User thuoc id Department nao trong bang Department -->
+                    <input hidden name="group_id" value="{{optional(\App\Models\User::find(\Illuminate\Support\Facades\Auth::id())->department)->id }}">
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i>
                             Request Title
@@ -80,6 +83,7 @@
                         <input type="date" class="form-control success" name="close" id="inputSuccess" placeholder="EX: Internship, Junior">
                         <span style="color: red">@error('close')* {{$message}}@enderror</span>
                     </div>
+
                     <div class="form-group">
                         <label class="col-form-label" for="inputSuccess">
                             Description
@@ -87,7 +91,6 @@
                         <textarea name="description" id="editor"></textarea>
                         <span style="color: red">@error('description')* {{$message}}@enderror</span>
                     </div>
-
                     <div class="col-sm-6">
                         <div class="form-group clearfix">
                             <div class="icheck-success d-inline">
@@ -116,3 +119,6 @@
         </div>
     </div>
 @endsection
+
+
+

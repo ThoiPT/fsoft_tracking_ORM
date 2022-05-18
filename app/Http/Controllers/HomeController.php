@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Request as RequestMode;
 
 class HomeController extends Controller
 {
@@ -24,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+//        $request = RequestMode::all();
+        $request = RequestMode::paginate(2);
+        return view('dashboard',compact('request'));
     }
 
     public function logout()
