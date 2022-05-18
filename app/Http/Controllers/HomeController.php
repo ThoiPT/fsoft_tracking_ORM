@@ -27,8 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $request = RequestMode::all();
-        $request = RequestMode::paginate(2);
+        $request = RequestMode::paginate(10);
         return view('dashboard',compact('request'));
     }
 
