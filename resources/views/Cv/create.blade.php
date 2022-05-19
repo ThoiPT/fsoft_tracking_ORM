@@ -44,7 +44,7 @@
                         <label class="col-form-label" for="inputSuccess">
                             Phone Number
                         </label>
-                        <input type="text" class="form-control success" name="phone" minlength="10" maxlength="12" id="inputSuccess" placeholder="Phone Number">
+                        <input type="text" class="form-control success" name="phone" minlength="10" maxlength="12" pattern="[0][0-9]{9}" id="inputSuccess" placeholder="Ex: 0399769450">
                     </div>
 
                     <div class="form-group">
