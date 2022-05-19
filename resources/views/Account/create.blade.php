@@ -56,7 +56,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary swalDefaultError">Register</button>
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
         </div>

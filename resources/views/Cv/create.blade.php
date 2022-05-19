@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-danger swalDefaultError"style="color: white">Confirm</button>
+                        <button type="submit" class="btn btn-danger"style="color: white">Confirm</button>
                     </div>
                 </form>
             </div>

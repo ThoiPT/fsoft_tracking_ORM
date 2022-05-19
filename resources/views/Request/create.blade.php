@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-danger swalDefaultError"style="color: white">ADD REQUEST</button>
+                        <button type="submit" class="btn btn-danger"style="color: white">ADD REQUEST</button>
                     </div>
 
                 </form>

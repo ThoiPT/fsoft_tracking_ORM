@@ -23,14 +23,14 @@
                                 <label for="radioSuccess1">ON</label>
                             </div><br>
                             <div class="icheck-danger d-inline">
-                                <input type="radio" name="status2" value="0" id="radioSuccess3">
+                                <input type="radio" name="status" value="0" id="radioSuccess3">
                                 <label for="radioSuccess3">OFF</label>
                             </div><br>
                         </div>
                      </div>
             <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-success swalDefaultError">Submit</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </div>
                 @if(\Illuminate\Support\Facades\Session::has('mes'))
                     <div class="alert alert-success alert-dismissible">

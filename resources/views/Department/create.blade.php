@@ -41,7 +41,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary swalDefaultError">Add</button>
+                    <button type="submit" class="btn btn-primary ">Add</button>
                 </div>
             </form>
         </div>
