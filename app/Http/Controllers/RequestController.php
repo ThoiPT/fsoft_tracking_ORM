@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class RequestController extends Controller
 {
@@ -23,17 +25,6 @@ class RequestController extends Controller
     // create
     public function store(Request $request)
     {
-        $request -> validate([
-            'title'=>'required',
-            'experience'=>'required',
-            'level'=>'required',
-            'numRecruit'=>'required',
-            'open'=>'required',
-            'close'=>'required',
-            'description'=>'required',
-            'status'=>'required',
-            'group_id'=>'required'
-        ]);
         $data = RequestModel::create($request->all());
         foreach ($request->other_id as $item)
         {
@@ -42,7 +33,8 @@ class RequestController extends Controller
                 'skill_id'=>$item
             ]);
         }
-        return \redirect('request/list');
+        Session::flash('mes',"Request Add Success");
+        return Redirect::back();
     }
 
     // update

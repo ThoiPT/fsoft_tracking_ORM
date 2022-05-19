@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Department;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class DepartmentController extends Controller
 {
@@ -12,11 +14,11 @@ class DepartmentController extends Controller
     }
 
     public function store(Request $request){
-        $request -> validate([
-            'name'=>'required', 'description'=>'required'
-        ]);
+
         Department::create($request->all());
-        return redirect()->route('get.department.list');
+        Session::flash('mes','Department Add Success');
+//        return redirect()->route('get.department.list');
+        return Redirect::back();
     }
 
     public function editForm($id){

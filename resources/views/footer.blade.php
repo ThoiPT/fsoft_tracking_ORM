@@ -71,6 +71,7 @@
 </script>
 
 
+
 <script>
     $(function () {
         //Initialize Select2 Elements
@@ -160,5 +161,210 @@
     previewNode.id = ""
     var previewTemplate = previewNode.parentNode.innerHTML
     previewNode.parentNode.removeChild(previewNode)
+</script>
 
+{{--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>--}}
+{{--<script src="sweetalert2.all.min.js"></script>--}}
+{{--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
+
+<!-- VALIDATE FORM -->
+<!-- jquery-validation -->
+<script src="/template/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="/template/plugins/jquery-validation/additional-methods.min.js"></script>
+
+
+
+<script src="/template/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Page specific script -->
+<script>
+    $(function() {
+        $('#frmSkill').validate({
+            rules: {
+                name: {
+                    required: true,
+                },
+                status: {
+                    required: true
+                }
+            },
+            messages: {
+                name: "Please provide a valid name",
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+        $('#frmRequest').validate({
+            rules: {
+                title:{
+                    required: true,
+                },
+                experience:{
+                    required: true,
+                },
+                level: {
+                    required: true,
+                },
+                numRecruit: {
+                    required: true,
+                },
+                open: {
+                    required: true,
+                },
+                close: {
+                    required: true,
+                },
+                status: {
+                    required: true,
+                },
+                skill_id: {
+                    required: true,
+                },
+                description: {
+                    required: true,
+                },
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+        $('#frmCV').validate({
+            rules: {
+                name:{
+                    required: true,
+                },
+                phone:{
+                    required: true,
+                },
+                address: {
+                    required: true,
+                },
+                file: {
+                    required: true,
+                },
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+        $('#frmDepartment').validate({
+            rules: {
+                name:{
+                    required: true,
+                },
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+        $('#frmAccount').validate({
+            rules: {
+                name:{
+                    required: true,
+                },
+                email:{
+                    required: true,
+                    email: true
+                },
+                password:{
+                    required: true
+                }
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+
+    });
+</script>
+
+
+
+
+
+<script>
+    $(function() {
+        var Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000
+        });
+
+        $('.swalDefaultSuccess').click(function() {
+            Toast.fire({
+                icon: 'success',
+                title: 'Skll Add Success'
+            })
+        });
+        $('.swalDefaultInfo').click(function() {
+            Toast.fire({
+                icon: 'info',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultError').click(function() {
+            Toast.fire({
+                icon: 'error',
+                title: 'Please check the empty fields'
+            })
+        });
+        $('.swalDefaultWarning').click(function() {
+            Toast.fire({
+                icon: 'warning',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultQuestion').click(function() {
+            Toast.fire({
+                icon: 'question',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+    });
 </script>

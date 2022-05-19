@@ -8,8 +8,21 @@
             </div>
             <!-- form start -->
 
-            <form action="{{ route('post.department.create') }}" method="POST">
+            <form action="{{ route('post.department.create') }}" method="POST" id="frmDepartment">
                 @csrf
+                @if(\Illuminate\Support\Facades\Session::has('mes'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-check"></i>
+                            {{ \Illuminate\Support\Facades\Session::get('mes') }}
+                        </h5>
+                        Continue add or
+                        <a style="font-weight: bold; color: floralwhite" href="{{ route('get.department.list') }}">
+                            Go to List of Department
+                        </a>
+                    </div>
+                @endif
+
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Department Name</label>
@@ -28,7 +41,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary swalDefaultError">Add</button>
                 </div>
             </form>
         </div>

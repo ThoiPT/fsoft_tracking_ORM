@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use MongoDB\Driver\Session;
-use Illuminate\Support\MessageBag;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Session;
 
 class SkillController extends Controller
 {
@@ -16,11 +16,13 @@ class SkillController extends Controller
 
     // create
     public function store(Request $request){
+
         $request -> validate([
            'name'=>'required', 'status' => 'required'
         ]);
         Skill::create($request->all());
-        return redirect()->route('get.skill.list');
+        Session::flash('mes',"Skill Add Success");
+        return Redirect::back();
     }
 
     // update

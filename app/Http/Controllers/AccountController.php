@@ -6,6 +6,8 @@ use App\Models\Department;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Testing\Fluent\Concerns\Has;
 use Symfony\Component\Console\Input\Input;
 
@@ -16,11 +18,12 @@ class AccountController extends Controller
         return view('Account/create',compact('dpm'));
     }
     public function store(Request $request){
-        $list = User::all();
         $data = $request->all();
         $data['password'] = Hash::make($request->password);
         User::create($data);
-        return view('Account/list',compact('list'));
+        Session::flash('mes','Account Add Success');
+//        return view('Account/list',compact('list'));
+        return Redirect::back();
     }
     public function editForm($id){
         $dpm = Department::all();

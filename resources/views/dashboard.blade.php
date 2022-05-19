@@ -1,5 +1,10 @@
 @extends('home')
 @section('content')
+    <style>
+        #example1_paginate{
+            display: none;
+        }
+    </style>
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">View Report</h3>
@@ -80,5 +85,7 @@
         </div>
         <!-- /.card-body -->
     </div>
+
+
 @endsection
 

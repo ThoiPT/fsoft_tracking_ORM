@@ -41,12 +41,15 @@ Route::get('/request/create',[RequestController::class,'index']);
 Route::post('/request/create',[RequestController::class,'store']);
 
 // Update
+//Route::get('/request/{id}/update',[RequestController::class,'editForm']);
+//Route::post('/request/{id}update',[RequestController::class,'update']);
+
 Route::get('/request/update/{id}',[RequestController::class,'editForm']);
 Route::post('/request/update/{id}',[RequestController::class,'update']);
 
 // Destroy
 Route::get('/request/delete/{id}',[RequestController::class,'delete']);
-Route::get('/request/list',[RequestController::class,'list']);
+Route::get('/request/list',[RequestController::class,'list'])->name('get.request.list');
 
 /* ------------------------------------CV ---------------------------------------- */
 Route::get('/cv/create',[CvController::class,'index'])->name('get.cv.create');

@@ -8,8 +8,22 @@
                 <h3 class="card-title">Add Account</h3>
             </div>
             <!-- form start -->
-            <form method="POST" action="{{route('get.account.create')}}">
+            <form method="POST" action="{{route('get.account.create')}}" id="frmAccount">
                 @csrf
+
+                @if(\Illuminate\Support\Facades\Session::has('mes'))
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-check"></i>
+                            {{ \Illuminate\Support\Facades\Session::get('mes') }}
+                        </h5>
+                        Continue add or
+                        <a style="font-weight: bold; color: floralwhite" href="{{ route('get.account.list') }}">
+                            Go to List of Account
+                        </a>
+                    </div>
+                @endif
+
                 <div class="card-body">
                     <div class="form-group">
                         <label for="exampleInputName">Full Name</label>
@@ -21,12 +35,12 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" minlength="5" name="password" placeholder="Password">
                     </div>
 
-                    <div class="form-group" data-select2-id="78">
+                    <div class="form-group">
                         <label>Department</label>
-                        <select name="group_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" data-select2-id="17" tabindex="-1" aria-hidden="true">
+                        <select required name="group_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" >
                             @foreach($dpm as $dp)
                                 <option selected="selected" value="{{ $dp -> id }}">{{ $dp -> name }}</option>
                             @endforeach
@@ -42,7 +56,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary swalDefaultError">Register</button>
                 </div>
             </form>
         </div>
