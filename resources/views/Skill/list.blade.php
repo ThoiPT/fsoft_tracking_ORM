@@ -6,15 +6,9 @@
         }
     </style>
 
-{{--    @if($errors->any())--}}
-{{--        <button class="swalDefaultSuccess">--}}
-{{--            {{$errors -> first()}}--}}
-{{--        </button>--}}
-{{--    @endif--}}
-
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">View Report</h3>
+            <h3 class="card-title">List of Skill</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -33,7 +27,6 @@
                             </tr>
                             </thead>
                             <tbody>
-
                             @foreach($list as $item)
                                 <tr class="odd">
                                     <td class="dtr-control" tabindex="0">{{ $item -> id }}</td>

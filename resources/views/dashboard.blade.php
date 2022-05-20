@@ -1,5 +1,7 @@
 @extends('home')
+
 @section('content')
+    @include('report')
     <style>
         #example1_paginate{
             display: none;
@@ -23,13 +25,12 @@
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Skill - Job</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Department</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Email</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>
+{{--                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>--}}
                                 </tr>
                             </thead>
                             <tbody>
 
                             @foreach($request as $re)
-
                                 <tr class="odd">
                                     <td class="dtr-control" tabindex="0"> {{ $re -> id }}</td>
                                     @if($re->status == 1)
@@ -49,19 +50,19 @@
                                     <td>{{ $re -> skill -> name ?? 'None' }}</td>
                                     <td>{{ $re -> user -> department -> name ?? 'None' }}</td>
                                     <td>{{ $re -> user -> email }}</td>
-                                    <td>
-                                        <!-- Example single danger button -->
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Action
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Add CV</a>
-                                                <a class="dropdown-item" href="#">Update Status</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
+{{--                                    <td>--}}
+{{--                                        <!-- Example single danger button -->--}}
+{{--                                        <div class="btn-group">--}}
+{{--                                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                                                Action--}}
+{{--                                            </button>--}}
+{{--                                            <div class="dropdown-menu">--}}
+{{--                                                <a class="dropdown-item" href="#">Add CV</a>--}}
+{{--                                                <a class="dropdown-item" href="#">Update Status</a>--}}
+{{--                                                <a class="dropdown-item" onclick="deleteConfirm({{$re->id}})">Delete</a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </td>--}}
 
                                 </tr>
                             @endforeach
@@ -74,7 +75,7 @@
                                     <th rowspan="1" colspan="1">Skill - Job</th>
                                     <th rowspan="1" colspan="1">Department</th>
                                     <th rowspan="1" colspan="1">Email</th>
-                                    <th rowspan="1" colspan="1">Action</th>
+{{--                                    <th rowspan="1" colspan="1">Action</th>--}}
                                 </tr>
                             </tfoot>
                         </table>
@@ -85,7 +86,5 @@
         </div>
         <!-- /.card-body -->
     </div>
-
-
 @endsection
 

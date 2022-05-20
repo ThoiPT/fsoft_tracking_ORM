@@ -55,8 +55,8 @@
                                                 Action
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="/skill/create">New</a>
-                                                <a class="dropdown-item" href="/skill/update/{{$item -> id}}">Update</a>
+                                                <a class="dropdown-item" href="/request/create">New</a>
+                                                <a class="dropdown-item" href="/request/update/{{$item -> id}}">Update</a>
                                                 <a class="dropdown-item" onclick="deleteConfirm({{$item -> id}})">Delete</a>
                                             </div>
                                         </div>

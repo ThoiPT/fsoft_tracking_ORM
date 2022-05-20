@@ -7,7 +7,7 @@
     </style>
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">View Report</h3>
+            <h3 class="card-title">List of Account</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -43,8 +43,8 @@
                                                 Action
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="/skill/create">New</a>
-                                                <a class="dropdown-item" href="/skill/update/{{$item -> id}}">Update</a>
+                                                <a class="dropdown-item" href="/account/create">New</a>
+                                                <a class="dropdown-item" href="/account/update/{{$item -> id}}">Update</a>
                                                 <a class="dropdown-item" onclick="deleteConfirm({{$item -> id}})">Delete</a>
                                             </div>
                                         </div>
