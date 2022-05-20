@@ -32,7 +32,7 @@ Route::post('skill/create',[SkillController::class,'store'])->name('post.skill.c
 Route::get("/skill/update/{id}",[SkillController::class,'editForm']);
 Route::post("/skill/update/{id}",[SkillController::class,'update']);
 // Destroy
-Route::get('/skill/delete/{id}',[SkillController::class,'delete']);
+Route::get('/skill/delete/{id}',[SkillController::class,'delete'])->name('get.skill.delete');
 Route::get('/skill/list',[SkillController::class,'list'])->name('get.skill.list');
 
 /* ---------------------------------- REQUESTS ----------------------------------- */

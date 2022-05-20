@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Toaster;
 
 class SkillController extends Controller
 {
@@ -39,11 +40,11 @@ class SkillController extends Controller
     // destroy
     public function delete($id){
         Skill::destroy($id);
-        return \redirect('skill/list');
+        return redirect('skill/list');
     }
     // show
     public function list(){
-        $list = Skill::paginate(5);
+        $list = Skill::paginate(50);
         return view("Skill/list",compact('list'));
     }
 }

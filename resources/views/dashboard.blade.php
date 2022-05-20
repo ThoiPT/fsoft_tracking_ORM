@@ -46,7 +46,7 @@
                                         </td>
                                     @endif
                                     <td>{{ $re -> title }}</td>
-                                    <td>{{ $re -> skill -> name }}</td>
+                                    <td>{{ $re -> skill -> name ?? 'None' }}</td>
                                     <td>{{ $re -> user -> department -> name ?? 'None' }}</td>
                                     <td>{{ $re -> user -> email }}</td>
                                     <td>

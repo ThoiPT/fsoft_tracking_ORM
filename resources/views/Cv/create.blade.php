@@ -52,7 +52,7 @@
                             Address
                         </label>
                         <input type="text" class="form-control success" name="address" id="inputSuccess" placeholder="Address">
-                        <span style="color: red">@error('address')* {{$message}}@enderror</span>
+{{--                        <span style="color: red">@error('address')* {{$message}}@enderror</span>--}}
                     </div>
 
                     <div hidden class="form-group">

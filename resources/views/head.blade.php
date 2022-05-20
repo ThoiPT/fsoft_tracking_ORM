@@ -35,3 +35,6 @@
 
 {{--<link rel="stylesheet" href="sweetalert2.min.css">--}}
 <link rel="stylesheet" href="/template/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
+
