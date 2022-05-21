@@ -25,6 +25,8 @@ class RequestController extends Controller
     // create
     public function store(Request $request)
     {
+
+
         $data = RequestModel::create($request->all());
         foreach ($request->other_id as $item)
         {
@@ -33,6 +35,8 @@ class RequestController extends Controller
                 'skill_id'=>$item
             ]);
         }
+
+
         Session::flash('mes',"Request Add Success");
         return Redirect::back();
     }

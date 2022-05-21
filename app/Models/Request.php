@@ -46,4 +46,16 @@ class Request extends Model
     {
         return $this -> hasMany(CVitae::class,'request_id','id');
     }
+
+    public function minusNumRecruit(){
+        $this->update([
+            'numRecruit' => $this->numRecruit-1
+        ]);
+    }
+
+    public function plusNumRecruit(){
+        $this->update([
+            'numRecruit' => $this->numRecruit+1
+        ]);
+    }
 }

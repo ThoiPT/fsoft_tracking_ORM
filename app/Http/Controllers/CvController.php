@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\CVitae;
 use App\Models\Request as RequestModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -18,12 +19,11 @@ class CvController extends Controller
 
     public function store(Request $request)
     {
-        CVitae::create($request->all());
-        $filename = $request->file->getClientOriginalName();
-        $request->file->move(public_path('uploads'),$filename);
-
+        $newCV = CVitae::create($request->all());
+        if($newCV){
+            $newCV->request->minusNumRecruit();
+        }
         Session::flash('mes',"Curriculum Vitae Add Success");
-//        return redirect()->route('get.cv.list');
         return Redirect::back();
     }
 
@@ -52,7 +52,11 @@ class CvController extends Controller
 
     public function delete($id)
     {
-        CVitae::destroy($id);
+        $request_id = CVitae::find($id)->request->id;
+        if(CVitae::destroy($id)){
+            RequestModel::find($request_id)->plusNumRecruit();
+        }
+
         return redirect()->route('get.cv.list');
     }
 }

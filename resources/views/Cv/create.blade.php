@@ -10,7 +10,7 @@
             <div class="card-body">
                 <form action="{{route('post.cv.create')}}" method="POST" enctype="multipart/form-data" id="frmCV">
                     @csrf
-
+                    {{--notification--}}
                     @if(\Illuminate\Support\Facades\Session::has('mes'))
                         <div class="alert alert-success alert-dismissible">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -68,7 +68,7 @@
                         </label>
                         <input type="file" class="form-control success" name="file" id="inputSuccess" placeholder="File">
                     </div>
-
+t
                     <div class="form-group">
                         <button type="submit" class="btn btn-danger"style="color: white">Confirm</button>
                     </div>

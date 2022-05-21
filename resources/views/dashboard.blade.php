@@ -23,6 +23,8 @@
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending">Status</th>
                                     <th class="sorting sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" aria-sort="descending">Request Name</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Skill - Job</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Close Date</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Vacancy</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Department</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Email</th>
 {{--                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Action</th>--}}
@@ -48,6 +50,8 @@
                                     @endif
                                     <td>{{ $re -> title }}</td>
                                     <td>{{ $re -> skill -> name ?? 'None' }}</td>
+                                    <td>{{ $re -> close }}</td>
+                                    <td>{{ $re -> numRecruit }}</td>
                                     <td>{{ $re -> user -> department -> name ?? 'None' }}</td>
                                     <td>{{ $re -> user -> email }}</td>
 {{--                                    <td>--}}
@@ -63,7 +67,6 @@
 {{--                                            </div>--}}
 {{--                                        </div>--}}
 {{--                                    </td>--}}
-
                                 </tr>
                             @endforeach
                             </tbody>
@@ -74,6 +77,8 @@
                                     <th rowspan="1" colspan="1">Request Name</th>
                                     <th rowspan="1" colspan="1">Skill - Job</th>
                                     <th rowspan="1" colspan="1">Department</th>
+                                    <th rowspan="1" colspan="1">Close Date</th>
+                                    <th rowspan="1" colspan="1">Vacancy</th>
                                     <th rowspan="1" colspan="1">Email</th>
 {{--                                    <th rowspan="1" colspan="1">Action</th>--}}
                                 </tr>

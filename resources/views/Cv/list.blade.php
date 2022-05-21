@@ -55,7 +55,11 @@
                                     <td>{{ $item -> name }}</td>
                                     <td>{{ $item -> phone }}</td>
                                     <td>{{ $item -> address }}</td>
-                                    <td>{{ $item -> file }}</td>
+                                    <td>
+                                        Đang test
+{{--                                        <a href={{ asset('/uploads/'.$item->file) }} target="_blank">{{ $item -> file }}</a>--}}
+{{--                                        <embed name="plugin" src={{ asset('/uploads/'.$item->file) }} type="application/pdf">--}}
+                                    </td>
                                     <td>
                                         <!-- Example single danger button -->
                                         <div class="btn-group">
