@@ -28,7 +28,9 @@
                         <label>Add to</label>
                         <select name="request_id" class="form-control select2bs4 select2-hidden-accessible" style="width: 100%;" aria-hidden="true">
                             @foreach($request as $re)
-                                <option selected="selected" value="{{ $re -> id }}">{{ $re -> title }}</option>
+                                <option selected="selected" value="{{ $re -> id }}">
+                                    {{ $re -> title }} (Available: {{$re -> numRecruit}})
+                                </option>
                             @endforeach
                         </select>
                     </div>
@@ -51,9 +53,7 @@
                         <label class="col-form-label" for="inputSuccess">
                             Address
                         </label>
-                        <input type="text" class="form-control success" name="address" id="inputSuccess" placeholder="Address">
-{{--                        <span style="color: red">@error('address')* {{$message}}@enderror</span>--}}
-                    </div>
+                        <input type="text" class="form-control success" name="address" id="inputSuccess" placeholder="Address"></div>
 
                     <div hidden class="form-group">
                         <label class="col-form-label" for="inputSuccess">
@@ -68,7 +68,6 @@
                         </label>
                         <input type="file" class="form-control success" name="file" id="inputSuccess" placeholder="File">
                     </div>
-t
                     <div class="form-group">
                         <button type="submit" class="btn btn-danger"style="color: white">Confirm</button>
                     </div>

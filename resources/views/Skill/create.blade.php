@@ -14,7 +14,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Skill Name</label>
-                    <input name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    <input name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter name">
                 </div>
                     <div class="col-sm-6">
                         <div class="form-group clearfix">

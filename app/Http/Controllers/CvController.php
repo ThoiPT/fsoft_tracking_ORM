@@ -12,18 +12,20 @@ class CvController extends Controller
 {
     public function index()
     {
-       // Lấy ra các Request có trạng thái là On (value > 0)
-       $request = RequestModel::all()->where('status','>',0);
+       // Lấy ra các Request có trạng thái là On (value > 0) và còn trống slot add CV
+       $request = RequestModel::all()->where('status','>',0,'and')->where('numRecruit','>',0);
        return view('Cv/create',compact('request'));
     }
-
     public function store(Request $request)
     {
-        $newCV = CVitae::create($request->all());
-        if($newCV){
-            $newCV->request->minusNumRecruit();
+        $numRe = RequestModel::find($request->request_id)->numRecruit;
+        if($numRe > 0){
+            $newCV = CVitae::create($request->all());
+            if($newCV){
+                $newCV->request->minusNumRecruit();
+            }
+            Session::flash('mes',"Curriculum Vitae Add Success");
         }
-        Session::flash('mes',"Curriculum Vitae Add Success");
         return Redirect::back();
     }
 
@@ -39,7 +41,6 @@ class CvController extends Controller
         $id->update($request->all());
 //        $filename = $request->file->extension();
 //        $request->file->move(public_path('uploads'),$filename);
-
         return redirect()->route('get.cv.list');
     }
 
@@ -56,7 +57,6 @@ class CvController extends Controller
         if(CVitae::destroy($id)){
             RequestModel::find($request_id)->plusNumRecruit();
         }
-
         return redirect()->route('get.cv.list');
     }
 }

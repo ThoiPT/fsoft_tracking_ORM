@@ -51,7 +51,13 @@
                                     <td>{{ $re -> title }}</td>
                                     <td>{{ $re -> skill -> name ?? 'None' }}</td>
                                     <td>{{ $re -> close }}</td>
-                                    <td>{{ $re -> numRecruit }}</td>
+                                    @if($re -> numRecruit == 0)
+                                        <td>
+                                            <small class="badge badge-danger">Full</small>
+                                        </td>
+                                    @else
+                                        <td>{{$re -> numRecruit}}</td>
+                                    @endif
                                     <td>{{ $re -> user -> department -> name ?? 'None' }}</td>
                                     <td>{{ $re -> user -> email }}</td>
 {{--                                    <td>--}}
@@ -76,9 +82,9 @@
                                     <th rowspan="1" colspan="1">Status</th>
                                     <th rowspan="1" colspan="1">Request Name</th>
                                     <th rowspan="1" colspan="1">Skill - Job</th>
-                                    <th rowspan="1" colspan="1">Department</th>
                                     <th rowspan="1" colspan="1">Close Date</th>
                                     <th rowspan="1" colspan="1">Vacancy</th>
+                                    <th rowspan="1" colspan="1">Department</th>
                                     <th rowspan="1" colspan="1">Email</th>
 {{--                                    <th rowspan="1" colspan="1">Action</th>--}}
                                 </tr>
